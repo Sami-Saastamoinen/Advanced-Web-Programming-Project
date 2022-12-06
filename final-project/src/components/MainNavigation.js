@@ -5,7 +5,6 @@ import { useState } from "react";
 import "./MainNavigation.css";
 
 const MainNavigation = () => {
-	// show modal if user is not an admin
 	const [showModal, setShowModal] = useState(false);
 	const navigate = useNavigate();
 
