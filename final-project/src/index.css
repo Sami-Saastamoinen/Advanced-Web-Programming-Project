@@ -8,7 +8,10 @@ body {
 	color: #fff;
 }
 
-.home__div {
+.home__div,
+.cart__div,
+.store__div,
+.admin__div {
 	width: 100%;
 	height: 100vh;
 	display: flex;
