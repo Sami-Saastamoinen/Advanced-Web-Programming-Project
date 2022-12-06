@@ -1,7 +1,19 @@
+import Modal from "../components/Modal";
+import Backdrop from "../components/Backdrop";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const HomePage = () => {
+	const [showModal, setShowModal] = useState(false);
 	const navigate = useNavigate();
+
+	const showModalHandler = () => {
+		setShowModal(true);
+	};
+
+	const closeModalHandler = () => {
+		setShowModal(false);
+	};
 
 	return (
 		<div className="home__div">
@@ -17,9 +29,16 @@ const HomePage = () => {
 			<button className="home__button" onClick={() => navigate("/cart")}>
 				Go To Your Shopping Cart
 			</button>
-			<button className="home__button" onClick={() => navigate("/admin")}>
+			<button className="home__button" onClick={showModalHandler}>
 				Admin Page | Plz Don't Use :)
 			</button>
+			{showModal && (
+				<Modal
+					onCancel={closeModalHandler}
+					onConfirm={() => navigate("/admin")}
+				/>
+			)}
+			{showModal ? <Backdrop onClick={closeModalHandler} /> : null}
 		</div>
 	);
 };

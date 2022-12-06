@@ -39,15 +39,24 @@
 	margin-left: 2rem;
 }
 
-.main-navigation__items a {
+.main-navigation__items a,
+.main-navigation__button {
 	text-decoration: none;
-	font-size: 1.5rem;
+	font: inherit;
+	font-size: 1.75rem;
 	color: #bff;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	padding: 0;
 }
 
 .main-navigation__items a:hover,
 .main-navigation__items a:focus,
-.main-navigation__items a:active {
+.main-navigation__items a:active,
+.main-navigation__button:hover,
+.main-navigation__button:focus,
+.main-navigation__button:active {
 	outline: none;
 	color: #fff;
 	text-decoration: underline;
