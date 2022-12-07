@@ -29,7 +29,7 @@ const StorePage = () => {
 	if (products.length === 0) {
 		content = <p>No products</p>;
 	} else {
-		content = <Products products={products} />;
+		content = <Products products={products} showAddToCart={true} />;
 	}
 
 	return (

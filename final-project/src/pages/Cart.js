@@ -29,7 +29,7 @@ const CartPage = () => {
 	if (products.length === 0) {
 		content = <p>No products added to cart</p>;
 	} else {
-		content = <Products products={products} />;
+		content = <Products products={products} showAddToCart={false} />;
 	}
 
 	return (

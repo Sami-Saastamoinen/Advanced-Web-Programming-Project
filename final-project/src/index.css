@@ -20,7 +20,10 @@ body {
 	flex-direction: column;
 }
 
-.home__div h1 {
+.home__div h1,
+.cart__div h1,
+.store__div h1,
+.admin__div h1 {
 	font-size: 3rem;
 	margin: 0;
 }
