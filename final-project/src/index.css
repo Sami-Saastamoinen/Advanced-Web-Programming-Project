@@ -122,3 +122,9 @@ label {
 .column {
 	flex: 50%;
 }
+
+@media (max-width: 600px) {
+	.column {
+		flex: 100%;
+	}
+}
