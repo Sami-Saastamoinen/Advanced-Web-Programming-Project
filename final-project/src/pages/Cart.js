@@ -4,28 +4,28 @@ import { useState, useEffect } from "react";
 const CartPage = () => {
 	const [products, setProducts] = useState([]);
 
-	useEffect(() => {
-		fetch(
+	const fetchProducts = async () => {
+		const response = await fetch(
 			"https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/cart.json"
-		)
-			.then((response) => {
-				return response.json();
-			})
-			.then((data) => {
-				const loadedProducts = [];
-				for (const key in data) {
-					loadedProducts.push({
-						id: key,
-						name: data[key].name,
-						plastic: data[key].plastic,
-						description: data[key].description,
-						image: data[key].image,
-						condition: data[key].condition,
-						price: data[key].price,
-					});
-				}
-				setProducts(loadedProducts);
+		);
+		const data = await response.json();
+		const loadedProducts = [];
+		for (const key in data) {
+			loadedProducts.push({
+				id: key,
+				name: data[key].name,
+				plastic: data[key].plastic,
+				description: data[key].description,
+				image: data[key].image,
+				condition: data[key].condition,
+				price: data[key].price,
 			});
+		}
+		setProducts(loadedProducts);
+	};
+
+	useEffect(() => {
+		fetchProducts();
 	}, []);
 
 	let content;
@@ -47,11 +47,24 @@ const CartPage = () => {
 		totalPrice += parseFloat(products[i].price);
 	}
 
+	const buyHandler = async () => {
+		await fetch(
+			`https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/cart.json`,
+			{
+				method: "DELETE",
+			}
+		);
+		window.location.reload();
+	};
+
 	return (
 		<div className="common__div">
 			<h1>The Cart Page</h1>
 			<section>{content}</section>
 			<h2>Total Price: ${totalPrice.toFixed(2)}</h2>
+			<button className="common__button" onClick={buyHandler}>
+				Buy These Items
+			</button>
 		</div>
 	);
 };
