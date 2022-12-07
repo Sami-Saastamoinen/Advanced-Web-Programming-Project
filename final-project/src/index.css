@@ -55,8 +55,8 @@ body {
 .common__button:focus,
 .common__button:active {
 	outline: none;
-	background-color: #fff;
-	color: #333;
+	background-color: #066;
+	color: #bff;
 }
 
 .modal {
@@ -81,12 +81,14 @@ body {
 .modal__button:focus,
 .modal__button:active {
 	background-color: #3f3;
+	color: #fff;
 }
 
 .modal__button--alt:hover,
 .modal__button--alt:focus,
 .modal__button--alt:active {
 	background-color: #f33;
+	color: #fff;
 }
 
 .backdrop {
