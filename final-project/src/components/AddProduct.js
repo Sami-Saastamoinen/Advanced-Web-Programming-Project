@@ -70,7 +70,12 @@ const AddProduct = (props) => {
 				</div>
 				<div className="column">
 					<label htmlFor="price">Price($): </label>
-					<input type="number" id="price" ref={priceInputRef} />
+					<input
+						type="number"
+						step="0.01"
+						id="price"
+						ref={priceInputRef}
+					/>
 				</div>
 			</div>
 			<button className="common__button add__button">Add Product</button>

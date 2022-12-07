@@ -42,10 +42,16 @@ const CartPage = () => {
 		);
 	}
 
+	var totalPrice = 0;
+	for (let i = 0; i < products.length; i++) {
+		totalPrice += parseFloat(products[i].price);
+	}
+
 	return (
 		<div className="cart__div">
 			<h1>The Cart Page</h1>
 			<section>{content}</section>
+			<h2>Total Price: ${totalPrice.toFixed(2)}</h2>
 		</div>
 	);
 };
