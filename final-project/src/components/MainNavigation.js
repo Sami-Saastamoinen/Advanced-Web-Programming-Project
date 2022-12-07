@@ -1,12 +1,37 @@
 import Modal from "./Modal";
 import Backdrop from "./Backdrop";
 import { Link, useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./MainNavigation.css";
 
 const MainNavigation = () => {
 	const [showModal, setShowModal] = useState(false);
 	const navigate = useNavigate();
+
+	const [cartItems, setCartItems] = useState([]);
+
+	useEffect(() => {
+		fetch(
+			"https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/cart.json"
+		)
+			.then((response) => {
+				return response.json();
+			})
+			.then((data) => {
+				const loadedCartItems = [];
+				for (const key in data) {
+					loadedCartItems.push({
+						id: key,
+						name: data[key].name,
+						plastic: data[key].plastic,
+						description: data[key].description,
+						condition: data[key].condition,
+						price: data[key].price,
+					});
+				}
+				setCartItems(loadedCartItems);
+			});
+	}, []);
 
 	const showModalHandler = () => {
 		setShowModal(true);
@@ -27,7 +52,7 @@ const MainNavigation = () => {
 						<Link to="/store">Store</Link>
 					</li>
 					<li>
-						<Link to="/cart">Cart</Link>
+						<Link to="/cart">Cart ({cartItems.length})</Link>
 					</li>
 					<li>
 						<button

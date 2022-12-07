@@ -16,8 +16,10 @@ const StorePage = () => {
 				for (const key in data) {
 					loadedProducts.push({
 						id: key,
-						title: data[key].title,
+						name: data[key].name,
+						plastic: data[key].plastic,
 						description: data[key].description,
+						condition: data[key].condition,
 						price: data[key].price,
 					});
 				}
@@ -29,7 +31,14 @@ const StorePage = () => {
 	if (products.length === 0) {
 		content = <p>No products</p>;
 	} else {
-		content = <Products products={products} showAddToCart={true} />;
+		content = (
+			<Products
+				products={products}
+				showAddToCart={true}
+				showRemoveFromCart={false}
+				showRemoveProduct={false}
+			/>
+		);
 	}
 
 	return (

@@ -1,6 +1,6 @@
 const AddToCart = ({ product }) => {
-	const addToCartHandler = () => {
-		fetch(
+	const addToCartHandler = async () => {
+		await fetch(
 			"https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/cart.json",
 			{
 				method: "POST",
@@ -10,6 +10,8 @@ const AddToCart = ({ product }) => {
 				},
 			}
 		);
+
+		window.location.reload();
 	};
 
 	return <button onClick={addToCartHandler}>Add to Cart</button>;

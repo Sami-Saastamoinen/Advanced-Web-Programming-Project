@@ -16,8 +16,10 @@ const CartPage = () => {
 				for (const key in data) {
 					loadedProducts.push({
 						id: key,
-						title: data[key].title,
+						name: data[key].name,
+						plastic: data[key].plastic,
 						description: data[key].description,
+						condition: data[key].condition,
 						price: data[key].price,
 					});
 				}
@@ -29,7 +31,14 @@ const CartPage = () => {
 	if (products.length === 0) {
 		content = <p>No products added to cart</p>;
 	} else {
-		content = <Products products={products} showAddToCart={false} />;
+		content = (
+			<Products
+				products={products}
+				showAddToCart={false}
+				showRemoveFromCart={true}
+				showRemoveProduct={false}
+			/>
+		);
 	}
 
 	return (
