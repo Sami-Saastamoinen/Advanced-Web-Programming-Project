@@ -17,6 +17,7 @@ const AdminPage = () => {
 				name: data[key].name,
 				plastic: data[key].plastic,
 				description: data[key].description,
+				image: data[key].image,
 				condition: data[key].condition,
 				price: data[key].price,
 			});

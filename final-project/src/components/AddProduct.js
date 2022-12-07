@@ -4,6 +4,7 @@ const AddProduct = (props) => {
 	const nameInputRef = useRef();
 	const plasticInputRef = useRef();
 	const descriptionInputRef = useRef();
+	const imageInputRef = useRef();
 	const conditionInputRef = useRef();
 	const priceInputRef = useRef();
 
@@ -13,6 +14,7 @@ const AddProduct = (props) => {
 		const enteredName = nameInputRef.current.value;
 		const enteredPlastic = plasticInputRef.current.value;
 		const enteredDescription = descriptionInputRef.current.value;
+		const enteredImage = imageInputRef.current.value;
 		const enteredCondition = conditionInputRef.current.value;
 		const enteredPrice = priceInputRef.current.value;
 
@@ -20,6 +22,7 @@ const AddProduct = (props) => {
 			name: enteredName,
 			plastic: enteredPlastic,
 			description: enteredDescription,
+			image: enteredImage,
 			condition: enteredCondition,
 			price: enteredPrice,
 		};
@@ -29,6 +32,7 @@ const AddProduct = (props) => {
 		nameInputRef.current.value = "";
 		plasticInputRef.current.value = "";
 		descriptionInputRef.current.value = "";
+		imageInputRef.current.value = "";
 		conditionInputRef.current.value = "";
 		priceInputRef.current.value = "";
 	};
@@ -55,17 +59,21 @@ const AddProduct = (props) => {
 					/>
 				</div>
 				<div className="column">
-					<label htmlFor="condition">Condition: </label>
-					<input type="text" id="condition" ref={conditionInputRef} />
+					<label htmlFor="image">Image URL: </label>
+					<input type="text" id="image" ref={imageInputRef} />
 				</div>
 			</div>
 			<div className="row">
 				<div className="column">
+					<label htmlFor="condition">Condition: </label>
+					<input type="text" id="condition" ref={conditionInputRef} />
+				</div>
+				<div className="column">
 					<label htmlFor="price">Price($): </label>
 					<input type="number" id="price" ref={priceInputRef} />
 				</div>
-				<button className="common__button">Add Product</button>
 			</div>
+			<button className="common__button add__button">Add Product</button>
 		</form>
 	);
 };

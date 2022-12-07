@@ -47,6 +47,10 @@ body {
 	font-size: 2rem;
 }
 
+.add__button {
+	margin-left: 0;
+}
+
 .common__button:hover,
 .common__button:focus,
 .common__button:active {
@@ -128,8 +132,7 @@ label {
 
 .product__li {
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	flex-direction: column;
 	padding: 1rem;
 	border-bottom: 1px solid #fff;
 }

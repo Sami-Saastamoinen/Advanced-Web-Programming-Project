@@ -17,7 +17,12 @@ const Products = (props) => {
 							</h3>
 						</div>
 						<div className="column-3">
-							<img src={product.image} alt={product.name} />
+							<img
+								src={product.image}
+								alt={product.name}
+								width="200"
+								height="200"
+							/>
 						</div>
 						<div className="column-3">
 							{props.showAddToCart && (
