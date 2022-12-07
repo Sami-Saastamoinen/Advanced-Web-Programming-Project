@@ -9,12 +9,17 @@ body {
 	color: #fff;
 }
 
-.home__div,
-.cart__div,
-.store__div,
-.admin__div {
+.home__div {
 	width: 100%;
 	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.store__div,
+.cart__div,
+.admin__div {
+	width: 100%;
 	align-items: center;
 	flex-direction: column;
 }
@@ -114,6 +119,21 @@ label {
 	font-size: 1.5rem;
 }
 
+.product__ul {
+	list-style: none;
+	margin: 0;
+	padding: 1rem;
+	width: 100%;
+}
+
+.product__li {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+	border-bottom: 1px solid #fff;
+}
+
 .row {
 	display: flex;
 	flex-wrap: wrap;
@@ -121,6 +141,10 @@ label {
 
 .column {
 	flex: 50%;
+}
+
+.column-3 {
+	flex: 33.3%;
 }
 
 @media (max-width: 600px) {

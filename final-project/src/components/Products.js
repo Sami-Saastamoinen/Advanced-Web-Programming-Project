@@ -4,11 +4,11 @@ import RemoveProduct from "./RemoveProduct";
 
 const Products = (props) => {
 	return (
-		<ul>
+		<ul className="product__ul">
 			{props.products.map((product) => (
-				<li key={product.id}>
+				<li className="product__li" key={product.id}>
 					<div className="row">
-						<div className="column">
+						<div className="column-3">
 							<h2>{product.name}</h2>
 							<h2>{product.plastic}</h2>
 							<h3>{product.description}</h3>
@@ -16,7 +16,10 @@ const Products = (props) => {
 								{product.condition} | ${product.price}
 							</h3>
 						</div>
-						<div className="column">
+						<div className="column-3">
+							<img src={product.image} alt={product.name} />
+						</div>
+						<div className="column-3">
 							{props.showAddToCart && (
 								<AddToCart product={product} />
 							)}
