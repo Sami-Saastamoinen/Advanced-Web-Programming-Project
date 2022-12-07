@@ -44,7 +44,7 @@ const MainNavigation = () => {
 	return (
 		<header className="main-navigation">
 			<div className="main-navigation__logo">
-				<Link to="/">Flying Plastic Plates</Link>
+				<Link to="/">FPP</Link>
 			</div>
 			<nav className="main-navigation__items">
 				<ul>
