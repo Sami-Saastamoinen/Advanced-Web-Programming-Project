@@ -61,7 +61,7 @@ const AdminPage = () => {
 	}
 
 	return (
-		<div className="admin__div">
+		<div className="common__div">
 			<h1>The Admin Page</h1>
 			<section>
 				<AddProduct onAddProduct={addProductHandler} />

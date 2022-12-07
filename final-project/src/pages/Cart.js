@@ -48,7 +48,7 @@ const CartPage = () => {
 	}
 
 	return (
-		<div className="cart__div">
+		<div className="common__div">
 			<h1>The Cart Page</h1>
 			<section>{content}</section>
 			<h2>Total Price: ${totalPrice.toFixed(2)}</h2>

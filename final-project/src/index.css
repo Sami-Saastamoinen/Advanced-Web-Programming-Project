@@ -4,33 +4,34 @@
 
 body {
 	margin: 0;
-	padding-top: 6rem;
+	padding-top: 5rem;
 	background-color: #333;
 	color: #fff;
 }
 
+/************************************************
+DIVS
+************************************************/
+
+.common__div {
+	width: 100%;
+	align-items: center;
+	flex-direction: column;
+	padding: 1rem;
+}
+
 .home__div {
-	width: 100%;
 	display: flex;
-	align-items: center;
-	flex-direction: column;
 }
 
-.store__div,
-.cart__div,
-.admin__div {
-	width: 100%;
-	align-items: center;
-	flex-direction: column;
-}
-
-.home__div h1,
-.cart__div h1,
-.store__div h1,
-.admin__div h1 {
+.common__div h1 {
 	font-size: 3rem;
 	margin: 0;
 }
+
+/************************************************
+BUTTONS
+************************************************/
 
 .common__button {
 	background-color: #333;
@@ -59,19 +60,6 @@ body {
 	color: #bff;
 }
 
-.modal {
-	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
-	border-radius: 6px;
-	background-color: #333;
-	padding: 1rem;
-	text-align: center;
-	width: 30rem;
-	z-index: 10;
-	position: fixed;
-	top: 20vh;
-	left: calc(50% - 15rem);
-}
-
 .modal__button,
 .modal__button--alt {
 	font-size: 1.5rem;
@@ -91,6 +79,23 @@ body {
 	color: #fff;
 }
 
+/************************************************
+MODAL AND BACKDROP
+************************************************/
+
+.modal {
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 6px;
+	background-color: #333;
+	padding: 1rem;
+	text-align: center;
+	width: 30rem;
+	z-index: 10;
+	position: fixed;
+	top: 20vh;
+	left: calc(50% - 15rem);
+}
+
 .backdrop {
 	position: fixed;
 	z-index: 1;
@@ -100,6 +105,10 @@ body {
 	top: 0;
 	left: 0;
 }
+
+/************************************************
+FORMS
+************************************************/
 
 form {
 	padding: 1rem;
@@ -124,6 +133,10 @@ input:focus {
 label {
 	font-size: 1.5rem;
 }
+
+/************************************************
+LISTS
+************************************************/
 
 .product__ul {
 	list-style: none;

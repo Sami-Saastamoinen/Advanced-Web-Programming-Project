@@ -16,7 +16,7 @@ const HomePage = () => {
 	};
 
 	return (
-		<div className="home__div">
+		<div className="common__div home__div">
 			<h1>Welcome To The FPP Store!</h1>
 			<h1>The #1 Store In The Game</h1>
 			<br />

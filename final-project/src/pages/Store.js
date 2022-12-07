@@ -43,7 +43,7 @@ const StorePage = () => {
 	}
 
 	return (
-		<div className="store__div">
+		<div className="common__div">
 			<h1>The Store Page</h1>
 			<section>{content}</section>
 		</div>
