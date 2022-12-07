@@ -10,7 +10,11 @@ const RemoveFromCart = ({ product }) => {
 		window.location.reload();
 	};
 
-	return <button onClick={removeFromCartHandler}>Remove from Cart</button>;
+	return (
+		<button className="common__button" onClick={removeFromCartHandler}>
+			Remove from Cart
+		</button>
+	);
 };
 
 export default RemoveFromCart;

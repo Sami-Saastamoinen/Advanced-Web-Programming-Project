@@ -35,27 +35,37 @@ const AddProduct = (props) => {
 
 	return (
 		<form onSubmit={submitHandler}>
-			<div>
-				<label htmlFor="name">Name</label>
-				<input type="text" id="name" ref={nameInputRef} />
+			<div className="row">
+				<div className="column">
+					<label htmlFor="name">Name: </label>
+					<input type="text" id="name" ref={nameInputRef} />
+				</div>
+				<div className="column">
+					<label htmlFor="plastic">Plastic: </label>
+					<input type="text" id="plastic" ref={plasticInputRef} />
+				</div>
 			</div>
-			<div>
-				<label htmlFor="plastic">Plastic</label>
-				<input type="text" id="plastic" ref={plasticInputRef} />
+			<div className="row">
+				<div className="column">
+					<label htmlFor="description">Description: </label>
+					<input
+						type="text"
+						id="description"
+						ref={descriptionInputRef}
+					/>
+				</div>
+				<div className="column">
+					<label htmlFor="condition">Condition: </label>
+					<input type="text" id="condition" ref={conditionInputRef} />
+				</div>
 			</div>
-			<div>
-				<label htmlFor="description">Description</label>
-				<input type="text" id="description" ref={descriptionInputRef} />
+			<div className="row">
+				<div className="column">
+					<label htmlFor="price">Price($): </label>
+					<input type="number" id="price" ref={priceInputRef} />
+				</div>
+				<button className="common__button">Add Product</button>
 			</div>
-			<div>
-				<label htmlFor="condition">Condition</label>
-				<input type="text" id="condition" ref={conditionInputRef} />
-			</div>
-			<div>
-				<label htmlFor="price">Price</label>
-				<input type="number" id="price" ref={priceInputRef} />
-			</div>
-			<button>Add Product</button>
 		</form>
 	);
 };

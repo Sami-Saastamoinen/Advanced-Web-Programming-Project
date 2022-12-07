@@ -14,7 +14,11 @@ const AddToCart = ({ product }) => {
 		window.location.reload();
 	};
 
-	return <button onClick={addToCartHandler}>Add to Cart</button>;
+	return (
+		<button className="common__button" onClick={addToCartHandler}>
+			Add to Cart
+		</button>
+	);
 };
 
 export default AddToCart;

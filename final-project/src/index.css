@@ -4,6 +4,7 @@
 
 body {
 	margin: 0;
+	padding-top: 6rem;
 	background-color: #333;
 	color: #fff;
 }
@@ -13,10 +14,8 @@ body {
 .store__div,
 .admin__div {
 	width: 100%;
-	height: 100vh;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	flex-direction: column;
 }
 
@@ -28,19 +27,24 @@ body {
 	margin: 0;
 }
 
-.home__button {
+.common__button {
 	background-color: #333;
 	color: #fff;
 	border: 2px solid #fff;
 	border-radius: 5px;
 	padding: 10px;
 	margin: 10px;
-	font-size: 2rem;
+	font-size: 1rem;
 	text-decoration: none;
 }
 
-.home__button:hover,
-.home__button:focus {
+.home__button {
+	font-size: 2rem;
+}
+
+.common__button:hover,
+.common__button:focus,
+.common__button:active {
 	outline: none;
 	background-color: #fff;
 	color: #333;
@@ -59,31 +63,21 @@ body {
 	left: calc(50% - 15rem);
 }
 
-.modal__button {
-	background-color: #333;
-	color: #fff;
-	border: 2px solid #fff;
-	border-radius: 5px;
-	padding: 10px;
-	margin: 10px;
+.modal__button,
+.modal__button--alt {
 	font-size: 1.5rem;
-	text-decoration: none;
 }
 
 .modal__button:hover,
 .modal__button:focus,
 .modal__button:active {
-	outline: none;
 	background-color: #3f3;
-	color: #333;
 }
 
 .modal__button--alt:hover,
 .modal__button--alt:focus,
 .modal__button--alt:active {
-	outline: none;
 	background-color: #f33;
-	color: #333;
 }
 
 .backdrop {
@@ -94,4 +88,37 @@ body {
 	height: 100vh;
 	top: 0;
 	left: 0;
+}
+
+form {
+	padding: 1rem;
+}
+
+input {
+	width: 100%;
+	height: 2rem;
+	margin: 0.5rem 0;
+	padding: 0.5rem;
+	font-size: 1.5rem;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	background-color: #333;
+	color: #fff;
+}
+
+input:focus {
+	outline: none;
+}
+
+label {
+	font-size: 1.5rem;
+}
+
+.row {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.column {
+	flex: 50%;
 }

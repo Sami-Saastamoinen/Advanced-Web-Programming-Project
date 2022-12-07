@@ -23,13 +23,22 @@ const HomePage = () => {
 			<br />
 			<br />
 			<h2>Feel Free to Look Around</h2>
-			<button className="home__button" onClick={() => navigate("/store")}>
+			<button
+				className="common__button home__button"
+				onClick={() => navigate("/store")}
+			>
 				Check Out Our Selection
 			</button>
-			<button className="home__button" onClick={() => navigate("/cart")}>
+			<button
+				className="common__button home__button"
+				onClick={() => navigate("/cart")}
+			>
 				Go To Your Shopping Cart
 			</button>
-			<button className="home__button" onClick={showModalHandler}>
+			<button
+				className="common__button home__button"
+				onClick={showModalHandler}
+			>
 				Admin Page | Plz Don't Use :)
 			</button>
 			{showModal && (
