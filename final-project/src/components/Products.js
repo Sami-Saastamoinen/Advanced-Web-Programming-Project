@@ -26,13 +26,22 @@ const Products = (props) => {
 						</div>
 						<div className="column-3">
 							{props.showAddToCart && (
-								<AddToCart product={product} />
+								<AddToCart
+									product={product}
+									fetchProducts={props.fetchProducts}
+								/>
 							)}
 							{props.showRemoveFromCart && (
-								<RemoveFromCart product={product} />
+								<RemoveFromCart
+									product={product}
+									fetchProducts={props.fetchProducts}
+								/>
 							)}
 							{props.showRemoveProduct && (
-								<RemoveProduct product={product} />
+								<RemoveProduct
+									product={product}
+									fetchProducts={props.fetchProducts}
+								/>
 							)}
 						</div>
 					</div>

@@ -1,4 +1,4 @@
-const AddToCart = ({ product }) => {
+const AddToCart = ({ product, fetchProducts }) => {
 	const addToCartHandler = async () => {
 		await fetch(
 			"https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/cart.json",
@@ -11,7 +11,7 @@ const AddToCart = ({ product }) => {
 			}
 		);
 
-		window.location.reload();
+		fetchProducts();
 	};
 
 	return (

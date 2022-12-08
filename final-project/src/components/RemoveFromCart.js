@@ -1,4 +1,4 @@
-const RemoveFromCart = ({ product }) => {
+const RemoveFromCart = ({ product, fetchProducts }) => {
 	const removeFromCartHandler = async () => {
 		await fetch(
 			`https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/cart/${product.id}.json`,
@@ -7,7 +7,7 @@ const RemoveFromCart = ({ product }) => {
 			}
 		);
 
-		window.location.reload();
+		fetchProducts();
 	};
 
 	return (

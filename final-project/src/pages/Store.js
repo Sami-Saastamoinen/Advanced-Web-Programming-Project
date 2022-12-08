@@ -4,28 +4,28 @@ import { useState, useEffect } from "react";
 const StorePage = () => {
 	const [products, setProducts] = useState([]);
 
-	useEffect(() => {
-		fetch(
+	const fetchProducts = async () => {
+		const response = await fetch(
 			"https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/products.json"
-		)
-			.then((response) => {
-				return response.json();
-			})
-			.then((data) => {
-				const loadedProducts = [];
-				for (const key in data) {
-					loadedProducts.push({
-						id: key,
-						name: data[key].name,
-						plastic: data[key].plastic,
-						description: data[key].description,
-						image: data[key].image,
-						condition: data[key].condition,
-						price: data[key].price,
-					});
-				}
-				setProducts(loadedProducts);
+		);
+		const data = await response.json();
+		const loadedProducts = [];
+		for (const key in data) {
+			loadedProducts.push({
+				id: key,
+				name: data[key].name,
+				plastic: data[key].plastic,
+				description: data[key].description,
+				image: data[key].image,
+				condition: data[key].condition,
+				price: data[key].price,
 			});
+		}
+		setProducts(loadedProducts);
+	};
+
+	useEffect(() => {
+		fetchProducts();
 	}, []);
 
 	let content;
@@ -35,6 +35,7 @@ const StorePage = () => {
 		content = (
 			<Products
 				products={products}
+				fetchProducts={fetchProducts}
 				showAddToCart={true}
 				showRemoveFromCart={false}
 				showRemoveProduct={false}

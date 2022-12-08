@@ -35,6 +35,7 @@ const CartPage = () => {
 		content = (
 			<Products
 				products={products}
+				fetchProducts={fetchProducts}
 				showAddToCart={false}
 				showRemoveFromCart={true}
 				showRemoveProduct={false}
@@ -54,7 +55,9 @@ const CartPage = () => {
 				method: "DELETE",
 			}
 		);
-		window.location.reload();
+		setProducts([]);
+
+		alert("Thank you for your purchase!");
 	};
 
 	return (

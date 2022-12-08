@@ -53,6 +53,7 @@ const AdminPage = () => {
 		content = (
 			<Products
 				products={products}
+				fetchProducts={fetchProducts}
 				showAddToCart={false}
 				showRemoveFromCart={false}
 				showRemoveProduct={true}

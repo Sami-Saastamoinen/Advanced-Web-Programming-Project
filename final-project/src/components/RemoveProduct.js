@@ -1,4 +1,4 @@
-const RemoveProduct = ({ product }) => {
+const RemoveProduct = ({ product, fetchProducts }) => {
 	const removeProductHandler = async () => {
 		await fetch(
 			`https://product-list-84477-default-rtdb.europe-west1.firebasedatabase.app/products/${product.id}.json`,
@@ -7,7 +7,7 @@ const RemoveProduct = ({ product }) => {
 			}
 		);
 
-		window.location.reload();
+		fetchProducts();
 	};
 
 	return (
